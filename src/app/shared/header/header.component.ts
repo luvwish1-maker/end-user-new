@@ -8,9 +8,8 @@ import { AuthService } from '../../core/interceptor/auth.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   isLoggedIn = false;
-  menuOpen = false;
 
   constructor(private authService: AuthService) { }
 
@@ -18,9 +17,5 @@ export class HeaderComponent implements OnInit{
     this.authService.isLoggedIn$().subscribe(status => {
       this.isLoggedIn = status;
     });
-  }
-
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
   }
 }

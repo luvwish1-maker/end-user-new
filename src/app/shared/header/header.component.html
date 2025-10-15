@@ -1,40 +1,47 @@
-<header>
-    <div class="label">
-        <p>
+<header class="main-header">
+    <div class="label text-center py-2">
+        <p class="m-0 d-inline-block bg-white rounded-pill px-3 py-2">
             <span><i class="bi bi-gift"></i></span>
             Free delivery on orders above ₹499
             <span>Subscribe & save 10%</span>
         </p>
     </div>
 
-    <nav class="nav">
-        <div class="icon">
-            <img src="/logo.png" alt="Logo" />
-        </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/logo.png" alt="Logo" class="logo" />
+            </a>
 
-        <div class="hamburger" (click)="toggleMenu()">
-            <i class="bi" [ngClass]="menuOpen ? 'bi-x-lg' : 'bi-list'"></i>
-        </div>
-
-        <div class="options" [class.open]="menuOpen">
-            <ul>
-                <li>Home</li>
-                <li>Products</li>
-                <li>Contact</li>
-                <li>About Us</li>
-            </ul>
-        </div>
-
-        <div class="user">
-            <div *ngIf="!isLoggedIn" class="button">
-                <button>Login</button>
+            <div class="d-flex align-items-center d-lg-none ms-auto">
+                <button *ngIf="!isLoggedIn" class="btn login-btn me-2">Login</button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-2 text-dark"></i>
+                </button>
             </div>
-            <div *ngIf="isLoggedIn" class="items">
-                <ul>
-                    <li><i class="bi bi-heart"></i></li>
-                    <li><i class="bi bi-person"></i></li>
-                    <li><i class="bi bi-bag"></i></li>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                 </ul>
+
+                <div class="user d-none d-lg-flex align-items-center">
+                    <ng-container *ngIf="!isLoggedIn">
+                        <button class="btn login-btn">Login</button>
+                    </ng-container>
+                    <ng-container *ngIf="isLoggedIn">
+                        <ul class="list-unstyled d-flex mb-0">
+                            <li><i class="bi bi-heart"></i></li>
+                            <li><i class="bi bi-person"></i></li>
+                            <li><i class="bi bi-bag"></i></li>
+                        </ul>
+                    </ng-container>
+                </div>
             </div>
         </div>
     </nav>

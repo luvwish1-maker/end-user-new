@@ -1,27 +1,12 @@
-/* ---------- Global Reset ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.main-header {
+    background: linear-gradient(180deg, #FFCCE0 -29.14%, rgba(255, 204, 224, 0) 80.28%);
 }
 
-/* ---------- Label Section ---------- */
 .label {
     background-color: #FFE4EF;
-    text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 400;
     line-height: 20px;
-    padding: 8px 0;
-}
-
-.label p {
-    display: inline-block;
-    background-color: #FFFFFF;
-    padding: 4px 10px;
-    border-radius: 20px;
-    color: #1F1F1F;
 }
 
 .label span {
@@ -29,149 +14,82 @@
     margin: 0 4px;
 }
 
-/* ---------- Nav Section ---------- */
-.nav {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    background-color: #ffcce04b;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    position: relative;
-    z-index: 100;
+.navbar {
+    padding: 10px 40px;
 }
 
-.icon img {
-    width: 134px;
+.logo {
+    width: 130px;
     height: 34px;
     object-fit: contain;
 }
 
-/* ---------- Menu Options ---------- */
-.options ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-}
-
-.options ul li {
+.nav-link {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #1F1F1F;
-    padding: 6px 15px;
+    color: #1F1F1F !important;
+    padding: 8px 15px;
     border-radius: 20px;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.options ul li:hover {
+.nav-link:hover {
     background-color: #FFE4EF;
-    color: #A51058;
+    color: #A51058 !important;
 }
 
-/* ---------- User Section ---------- */
-.user {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.button button {
+.login-btn {
     background-color: #A51058;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 8px 20px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    cursor: pointer;
+    padding: 8px 20px;
     transition: background-color 0.3s;
 }
 
-.button button:hover {
+.login-btn:hover {
     background-color: #821044;
 }
 
-.items ul {
-    display: flex;
-    list-style: none;
-    gap: 12px;
-}
-
-.items ul li {
+.user ul li {
+    background-color: #FFE4EF;
+    border-radius: 20px;
     width: 36px;
     height: 36px;
-    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFE4EF;
-    cursor: pointer;
+    margin-left: 10px;
     transition: all 0.3s ease;
-}
-
-.items ul li:hover {
-    background-color: #A51058;
-    color: #fff;
-}
-
-/* ---------- Hamburger Menu ---------- */
-.hamburger {
-    display: none;
-    font-size: 28px;
     cursor: pointer;
-    color: #1F1F1F;
 }
 
-/* ---------- Responsive ---------- */
+.user ul li:hover {
+    background-color: #A51058;
+    color: white;
+}
+
 @media (max-width: 992px) {
-    .options ul {
-        flex-direction: column;
-        align-items: center;
+    .navbar {
+        padding: 10px 20px;
     }
 
-    .options {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #fff;
+    .nav-link {
         text-align: center;
-        display: none;
-        padding: 15px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        padding: 10px 0;
     }
 
-    .options.open {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .user {
-        position: absolute;
-        right: 20px;
+    .login-btn {
+        font-size: 14px;
+        padding: 6px 15px;
     }
 }
 
 @media (max-width: 576px) {
-    .nav {
-        padding: 0 20px;
-    }
-
     .label p {
         font-size: 14px;
-        padding: 3px 8px;
-    }
-
-    .button button {
-        padding: 6px 15px;
-        font-size: 14px;
+        padding: 4px 8px;
     }
 }
