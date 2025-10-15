@@ -1,0 +1,126 @@
+.footer-container {
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+    /* subtle luxury feel */
+    color: #222;
+    position: relative;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 5%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand {
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.social-icons {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    background: #e6007e;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    display: flex;
+    flex: 3 1 600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-links div h5 {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li:hover {
+    color: #e6007e;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1rem 5%;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    padding-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-top {
+        padding: 3rem 5%;
+        gap: 3rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+}
