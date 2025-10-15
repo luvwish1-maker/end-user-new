@@ -14,7 +14,7 @@
             </a>
 
             <div class="d-flex align-items-center d-lg-none ms-auto">
-                <button *ngIf="!isLoggedIn" class="btn login-btn me-2">Login</button>
+                <button *ngIf="!isLoggedIn" (click)="openLogin()" class="btn login-btn me-2">Login</button>
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
 
                 <div class="user d-none d-lg-flex align-items-center">
                     <ng-container *ngIf="!isLoggedIn">
-                        <button class="btn login-btn">Login</button>
+                        <button (click)="openLogin()" class="btn login-btn">Login</button>
                     </ng-container>
                     <ng-container *ngIf="isLoggedIn">
                         <ul class="list-unstyled d-flex mb-0">
