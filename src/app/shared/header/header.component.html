@@ -1,1 +1,41 @@
-<p>header works!</p>
+<header>
+    <div class="label">
+        <p>
+            <span><i class="bi bi-gift"></i></span>
+            Free delivery on orders above ₹499
+            <span>Subscribe & save 10%</span>
+        </p>
+    </div>
+
+    <nav class="nav">
+        <div class="icon">
+            <img src="/logo.png" alt="Logo" />
+        </div>
+
+        <div class="hamburger" (click)="toggleMenu()">
+            <i class="bi" [ngClass]="menuOpen ? 'bi-x-lg' : 'bi-list'"></i>
+        </div>
+
+        <div class="options" [class.open]="menuOpen">
+            <ul>
+                <li>Home</li>
+                <li>Products</li>
+                <li>Contact</li>
+                <li>About Us</li>
+            </ul>
+        </div>
+
+        <div class="user">
+            <div *ngIf="!isLoggedIn" class="button">
+                <button>Login</button>
+            </div>
+            <div *ngIf="isLoggedIn" class="items">
+                <ul>
+                    <li><i class="bi bi-heart"></i></li>
+                    <li><i class="bi bi-person"></i></li>
+                    <li><i class="bi bi-bag"></i></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
