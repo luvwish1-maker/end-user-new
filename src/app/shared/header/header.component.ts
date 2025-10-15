@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/interceptor/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from '../../components/login/login.component';
+import { ConfirmationService } from '../confirmation/service/confirmation.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private confirmationService: ConfirmationService
   ) { }
 
   ngOnInit(): void {
@@ -29,5 +31,14 @@ export class HeaderComponent implements OnInit {
     buttonElement.blur();
 
     this.modalService.open(LoginComponent, { size: 'md', centered: true, backdrop: 'static' });
+  }
+
+  async confirmation() {
+    const confirmed = await this.confirmationService.confirm({
+      title: 'Proceed to Summary',
+      message: 'Do you want to continue to the memorial summary?',
+      confirmText: 'Yes',
+      cancelText: 'No'
+    });
   }
 }
