@@ -60,10 +60,29 @@
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
+    position: relative;
 }
 
 .hero-left h2 span {
-    color: #ff4c8b;
+    color: #5A0E36;
+    position: relative;
+    display: inline-block;
+}
+
+/* Curved underline */
+.hero-left h2 span::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: radial-gradient(ellipse at center, #ff4c8b 40%, transparent 40%);
+    background-size: 100% 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    opacity: 0.4;
+    transform: scaleY(0.5);
 }
 
 .subtext {
@@ -130,6 +149,24 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    position: relative;
+}
+
+/* Divider between rating and fast delivery */
+.review-section::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 1.5px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.rating,
+.fast-delivery {
+    flex: 1;
+    text-align: center;
 }
 
 .rating .stars i {
@@ -188,5 +225,9 @@
 
     .review-section {
         justify-content: center;
+    }
+
+    .review-section::after {
+        display: none;
     }
 }
