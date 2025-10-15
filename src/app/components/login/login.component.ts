@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { finalize } from 'rxjs';
 import { AuthService } from '../../core/interceptor/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertService } from '../../shared/alert/service/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private alertService: AlertService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,13 +38,24 @@ export class LoginComponent {
       finalize(() => this.loading = false)
     ).subscribe({
       next: (res: any) => {
+        this.alertService.showAlert({
+          message: 'Logged In successfully',
+          type: 'success',
+          autoDismiss: true,
+          duration: 4000
+        });
         this.close(res);
       },
       error: (err) => {
         if (err.status === 404) {
           this.signup(email, password);
         } else {
-          console.log(err);
+          this.alertService.showAlert({
+            message: err.error.message,
+            type: 'error',
+            autoDismiss: true,
+            duration: 4000
+          });;
         }
       }
     });
@@ -50,8 +63,22 @@ export class LoginComponent {
 
   signup(email: string, password: string) {
     this.authService.signup({ email, password }).subscribe({
-      next: () => alert('Success'),
-      error: () => alert('Error')
+      next: () => {
+        this.alertService.showAlert({
+          message: 'Signed Up successfully',
+          type: 'success',
+          autoDismiss: true,
+          duration: 4000
+        });
+      },
+      error: (err) => {
+        this.alertService.showAlert({
+          message: err.error.message,
+          type: 'error',
+          autoDismiss: true,
+          duration: 4000
+        });
+      }
     });
   }
 

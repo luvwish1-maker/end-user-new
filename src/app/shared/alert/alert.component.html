@@ -1,1 +1,10 @@
-<p>alert works!</p>
+<div *ngIf="alert" class="alert-container" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="alert-box d-flex align-items-center shadow-sm rounded" [ngClass]="'alert-' + alert.type">
+        <div class="alert-message flex-grow-1">
+            {{ alert.message }}
+        </div>
+        <button *ngIf="alert.dismissible !== false" type="button" class="btn-close premium-close-btn ms-3"
+            aria-label="Close alert" (click)="close()">
+        </button>
+    </div>
+</div>
