@@ -47,17 +47,17 @@
 .label p {
     margin: 0;
     font-size: 0.9rem;
-    color: #444;
+    color: #800D45;
 }
 
 .label i {
-    color: #ff4c8b;
+    color: #800D45;
     font-size: 1rem;
 }
 
 .hero-left h2 {
-    font-size: 2.6rem;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -67,7 +67,7 @@
 }
 
 .subtext {
-    font-size: 1.05rem;
+    font-size: 18px;
     color: #666;
     margin-bottom: 1.8rem;
 }
@@ -162,8 +162,7 @@
 }
 
 .hero-right img {
-    width: 90%;
-    max-width: 400px;
+    max-width: 660px;
     filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.1));
 }
 
